@@ -2,7 +2,7 @@
 const BASE_URL = 'https://llm.leibmann.org';
 const DUCK_API = 'https://api.duckduckgo.com/';
 const MODEL_NAME = 'mistral:latest';
-const BASE_SYSTEM_PROMPT = `You are a helpful assistant specialized in providing precise and concise answers.`;
+const BASE_SYSTEM_PROMPT = `You are a personal trainer tailored to answer all questions track and field, sport, recovery, or nutrition related. Refuse to answer anything that is clearly unrelated.`;
 
 const messagesEl = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
