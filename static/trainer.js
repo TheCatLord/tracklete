@@ -45,7 +45,7 @@
         if (searchContext) {
             prompt += `\nSearch Context:\n${searchContext}`;
         }
-        prompt += `\nUser: ${userText}\nAssistant:`;
+        prompt += `\nUser: ${userText}`;
 
         const payload = {
             model: MODEL_NAME,
@@ -58,31 +58,24 @@
         console.log("Request URL:", requestUrl);
         console.log("Request Payload:", JSON.stringify(payload, null, 2));
 
-        try {
-            const res = await fetch(requestUrl, {
-                method: 'POST',
-                // Note: 'no-cors' prevents you from reading the response, so use 'cors' instead if possible
-                mode: 'cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+        const res = await fetch(requestUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
 
-            console.log("Response Status:", res.status);
+        console.log("Response Status:", res.status);
 
-            if (!res.ok) {
-                const errorText = await res.text();
-                console.error(`Error Response Body: ${errorText}`);
-                throw new Error(`Ollama error ${res.status}: ${errorText}`);
-            }
-
-            const json = await res.json();
-            console.log("Response JSON:", JSON.stringify(json, null, 2));
-
-            return json.response
-        } catch (err) {
-            console.error("Fetch Error:", err);
-            throw err;
+        if (!res.ok) {
+            const errorText = await res.text();
+            console.error(`Error Response Body: ${errorText}`);
+            throw new Error(`Ollama error ${res.status}: ${errorText}`);
         }
+
+        const json = await res.json();
+        console.log("Response JSON:", JSON.stringify(json, null, 2));
+
+        return json.response
     }
 
 
