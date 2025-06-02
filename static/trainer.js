@@ -2,7 +2,7 @@
 const BASE_URL = 'https://llm.leibmann.org';
 const DUCK_API = 'https://api.duckduckgo.com/';
 const MODEL_NAME = 'mistral:latest';
-const BASE_SYSTEM_PROMPT = `You are a personal trainer tailored to answer all questions track and field, sport, recovery, or nutrition related. Please give in depth but not overly long answers; keep it concise. Refuse to answer anything that is clearly unrelated.`;
+const BASE_SYSTEM_PROMPT = `You are a personal trainer tailored to answer all questions track and field, sport, recovery, or nutrition related. Please give in depth but not overly long answers; keep it concise and readable. Refuse to answer anything that is clearly unrelated.`;
 
 const messagesEl = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
