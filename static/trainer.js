@@ -77,7 +77,7 @@
             const json = await res.json();
             console.log("Response JSON:", JSON.stringify(json, null, 2));
 
-            return json.choices?.[0]?.text?.trim() || '';
+            return json.response
         } catch (err) {
             console.error("Fetch Error:", err);
             throw err;
