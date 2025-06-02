@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title> Tracklete Speedometer </title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <h1>
+        Tracklete
+    </h1>
+
+    <div style="display:flex; height: 100%;">
+        <nav class="navbar">
+            <a href="index.html"> <img src="Images/house.jpg" alt="house" width="60" height="60">
+                <br> </br> Home
+            </a>
+            <a href="speedometer.html"> <img src="Images/speedometer.jpg" alt="house" width="60" height="60">
+                <br> </br>
+                Speedometer </a>
+            <a href="trainer.html"> <img src="Images/trainer.jpg" alt="house" width="60" height="60">
+                <br> </br>
+                Trainer </a>
+            <a href="about.html"> <img src="Images/book.jpg" alt="house" width="60" height="60">
+                <br> </br>
+                About </a>
+
+
+        </nav>
+
+
+        <main>
+            <h3>
+                This is the Speedometer page
+            </h3>
+            <div>
+                <span id="speed">Loading speed...</span> <span id="unit">miles/hour</span>
+            </div>
+            <div id="error"></div>
+            <div id="lat"></div>
+            <div id="long"></div>
+            <div id="info"></div>
+            <h4>Speed Log</h4>
+
+            <table id="speed-log" border="1">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Speed (MPH)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="static/speedometer.js"></script>
+</body>
+
+</html>

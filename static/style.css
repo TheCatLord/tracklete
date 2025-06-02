@@ -1,0 +1,35 @@
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+
+main {
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px;
+    background-color: goldenrod;
+    color: black;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar a {
+    color: white;
+    background-color: gray;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    flex: 1;
+}
+
+.navbar a:hover {
+    background-color: goldenrod;
+}
