@@ -8,6 +8,7 @@
     const userInput = document.getElementById('userInput');
     const sendBtn = document.getElementById('sendBtn');
 
+    // appends a message to the element
     function appendMessage(text, className) {
         const msg = document.createElement('div');
         msg.classList.add('message', className);
