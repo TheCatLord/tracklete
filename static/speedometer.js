@@ -61,6 +61,7 @@
             document.getElementById("lat").innerHTML = "";
             document.getElementById("long").innerHTML = "";
             document.getElementById("info").style.display = "none";
+
             let loggingInterval = null;
             let loggingActive = false;
 
