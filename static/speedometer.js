@@ -67,7 +67,7 @@
                 if (!isNaN(speedValue)) {
                     logSpeed(speedValue);
                 }
-            }, 300);
+            }, 500);
 
         }, function (error) {
             // Handle geolocation errors
