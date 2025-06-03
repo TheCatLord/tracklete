@@ -62,20 +62,25 @@
             document.getElementById("long").innerHTML = "";
             document.getElementById("info").style.display = "none";
             let loggingInterval = null;
+            let loggingActive = false;
+
             const toggleButton = document.getElementById("toggle-log-btn");
 
             toggleButton.addEventListener("click", function () {
-                if (loggingInterval) {
+                if (loggingActive) {
                     clearInterval(loggingInterval);
                     loggingInterval = null;
+                    loggingActive = false;
                     toggleButton.textContent = "Start Measuring Speed";
                 } else {
                     loggingInterval = setInterval(function () {
-                        const speedValue = parseFloat(t.cache.speed.innerHTML);
+                        const speedStr = t.cache.speed?.innerHTML;
+                        const speedValue = parseFloat(speedStr);
                         if (!isNaN(speedValue)) {
                             logSpeed(speedValue);
                         }
                     }, 300);
+                    loggingActive = true;
                     toggleButton.textContent = "Stop Measuring Speed";
                 }
             });
