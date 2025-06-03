@@ -61,13 +61,24 @@
             document.getElementById("lat").innerHTML = "";
             document.getElementById("long").innerHTML = "";
             document.getElementById("info").style.display = "none";
-            // Log speed every 0.3 seconds (300 ms)
-            setInterval(function () {
-                const speedValue = parseFloat(t.cache.speed.innerHTML);
-                if (!isNaN(speedValue)) {
-                    logSpeed(speedValue);
+            let loggingInterval = null;
+            const toggleButton = document.getElementById("toggle-log-btn");
+
+            toggleButton.addEventListener("click", function () {
+                if (loggingInterval) {
+                    clearInterval(loggingInterval);
+                    loggingInterval = null;
+                    toggleButton.textContent = "Start Measuring Speed";
+                } else {
+                    loggingInterval = setInterval(function () {
+                        const speedValue = parseFloat(t.cache.speed.innerHTML);
+                        if (!isNaN(speedValue)) {
+                            logSpeed(speedValue);
+                        }
+                    }, 300);
+                    toggleButton.textContent = "Stop Measuring Speed";
                 }
-            }, 500);
+            });
 
         }, function (error) {
             // Handle geolocation errors
