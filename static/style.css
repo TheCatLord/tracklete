@@ -33,3 +33,17 @@ nav {
 .navbar a:hover {
     background-color: goldenrod;
 }
+
+#toggle-log-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: grey;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#toggle-log-btn:hover {
+    background-color: goldenrod;
+}
