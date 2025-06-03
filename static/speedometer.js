@@ -61,6 +61,13 @@
             document.getElementById("lat").innerHTML = "";
             document.getElementById("long").innerHTML = "";
             document.getElementById("info").style.display = "none";
+            // Log speed every 0.3 seconds (300 ms)
+            setInterval(function () {
+                const speedValue = parseFloat(t.cache.speed.innerHTML);
+                if (!isNaN(speedValue)) {
+                    logSpeed(speedValue);
+                }
+            }, 300);
 
         }, function (error) {
             // Handle geolocation errors
