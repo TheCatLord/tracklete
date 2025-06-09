@@ -8,6 +8,11 @@ const messagesEl = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 
+// Send initial message on page load
+window.addEventListener('DOMContentLoaded', () => {
+    appendMessage("Hi, I am your personal AI assistant. Feel free to ask me any question about track and field, sports, recovery, nutrition, or anything else!", "bot");
+});
+
 // appends a message to the element
 function appendMessage(text, className) {
     const msg = document.createElement('div');
